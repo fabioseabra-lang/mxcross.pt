@@ -94,16 +94,29 @@
 <section class="section dark">
   <div class="container">
     <div class="section-title">
-      <span class="kicker">Vídeo real</span>
+      <span class="kicker">Vídeos reais</span>
       <h2>Banco de potência em ação.</h2>
-      <p>Um registo real de um teste na MXCross.pt.</p>
+      <p>Dois registos reais de testes na MXCross.pt.</p>
     </div>
-    <div class="video-frame">
-      <video controls playsinline preload="metadata">
-        <source src="dyno_video.mp4" type="video/mp4">
-        O teu navegador não suporta reprodução de vídeo.
-      </video>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start">
+      <div class="video-frame">
+        <video controls playsinline preload="metadata">
+          <source src="dyno_video.mp4" type="video/mp4">
+          O teu navegador não suporta reprodução de vídeo.
+        </video>
+      </div>
+      <div class="video-frame">
+        <video controls playsinline preload="metadata">
+          <source src="https://static.metricool.com/planner/202609/7120076-file-8534843271407499104.mp4" type="video/mp4">
+          O teu navegador não suporta reprodução de vídeo.
+        </video>
+      </div>
     </div>
+    <style>
+      @media (max-width: 760px){
+        .section.dark .container > div[style*="grid-template-columns"]{grid-template-columns:1fr!important}
+      }
+    </style>
   </div>
 </section>
 
