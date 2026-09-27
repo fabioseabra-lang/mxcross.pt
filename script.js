@@ -40,7 +40,8 @@
     "Têm microesferas de vidro?":"Sim. Temos cabine de decapagem com microesferas de vidro para limpeza e renovação de peças.",
 
     "Onde ficam?":"A MXCross.pt fica em Rio Maior, Portugal. Para a morada exata, envia mensagem.",
-    "Como faço marcação?":"Envia mensagem com o serviço pretendido, marca/modelo e uma breve descrição do trabalho.",
+    "Como faço marcação?":"Envia mensagem com o serviço pretendido, marca/modelo e uma breve descrição do trabalho. A MXCross.pt trabalha exclusivamente por marcação.",
+    "Posso aparecer sem marcação?":"Não. Devido ao elevado número de pedidos, trabalhamos exclusivamente por marcação. Não te desloques à oficina sem marcação prévia. Queremos reservar tempo e atenção para cada cliente e para cada projeto.",
     "Qual é o horário?":"O horário definitivo da nova oficina ainda está a ser preparado. Confirma disponibilidade por mensagem.",
     "Como peço orçamento?":"Envia fotografias, medidas e descrição do trabalho. Alguns projetos precisam de avaliação presencial.",
     "Têm Instagram?":"Sim. Instagram: @mxcross.pt",
@@ -52,7 +53,7 @@
     fabricacao:["Fazem peças à medida?","Fazem flanges?","Fazem casquilhos?","Têm torno mecânico?","Têm fresadora?","Têm CNC?","Fazem CAD?"],
     soldadura:["Fazem soldadura TIG?","Fazem soldadura MIG?","Soldam alumínio?","Trabalham inox?","Fazem escapes?"],
     oficina:["Fazem manutenção de motos?","Fazem diagnóstico?","Trabalham com 4x4?","Têm microesferas de vidro?"],
-    contacto:["Onde ficam?","Como faço marcação?","Qual é o horário?","Como peço orçamento?","Têm Instagram?","Têm Facebook?"]
+    contacto:["Onde ficam?","Como faço marcação?","Posso aparecer sem marcação?","Qual é o horário?","Como peço orçamento?","Têm Instagram?","Têm Facebook?"]
   };
 
   function msg(text,who){
