@@ -38,7 +38,7 @@
     </div>
     <div class="actions">
       <a class="btn primary" href="orcamento.html">Pedir marcação</a>
-      <a class="btn whatsapp-btn" href="https://wa.me/351927067633" target="_blank" rel="noopener">Marcar pelo WhatsApp</a>
+      <a class="btn whatsapp-btn" href="https://wa.me/351927067633?text=Ol%C3%A1%21%20Venho%20atrav%C3%A9s%20do%20site%20MXCross.pt%20e%20gostaria%20de%20pedir%20informa%C3%A7%C3%B5es%20ou%20fazer%20uma%20marca%C3%A7%C3%A3o.%20Obrigado." target="_blank" rel="noopener">Marcar pelo WhatsApp</a>
     </div>
   </div>
 </section><section class="section"><div class="container quote-layout"><form class="quote-form" id="quoteForm"><label>Tipo de veículo<select id="qVehicle"><option>Mota</option><option>Carro</option><option>Jeep / 4x4</option><option>Outro</option></select></label><label>Serviço pretendido<select id="qService"><option>Banco de potência</option><option>Escape à medida</option><option>Soldadura TIG / MIG</option><option>Peça à medida / maquinação</option><option>Manutenção / diagnóstico</option><option>Preparação / performance</option><option>Projeto 4x4</option><option>Outro</option></select></label><label>Marca e modelo<input id="qModel" placeholder="Ex.: Nissan Patrol RD28"></label><label>O que pretendes fazer?<textarea id="qText" rows="6" placeholder="Explica o problema ou o objetivo..."></textarea></label><button class="btn primary" type="submit">Enviar pelo WhatsApp</button><p class="small">Depois podes anexar fotografias diretamente no WhatsApp.</p></form><aside class="textbox"><span class="badge">Para respondermos melhor</span><h3>Envia informação útil.</h3><ul><li>Marca e modelo</li><li>Fotos da zona ou peça</li><li>Medidas quando aplicável</li><li>Objetivo final</li><li>Prazo, se existir</li></ul></aside></div></section></main>
@@ -65,7 +65,7 @@
   </div>
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/351927067633" target="_blank" rel="noopener" aria-label="WhatsApp MXCross.pt">
+<a class="whatsapp-float" href="https://wa.me/351927067633?text=Ol%C3%A1%21%20Venho%20atrav%C3%A9s%20do%20site%20MXCross.pt%20e%20gostaria%20de%20pedir%20informa%C3%A7%C3%B5es%20ou%20fazer%20uma%20marca%C3%A7%C3%A3o.%20Obrigado." target="_blank" rel="noopener" aria-label="WhatsApp MXCross.pt">
   <span class="wa-icon">☎</span>
   <span class="wa-text">WhatsApp</span>
 </a>
@@ -102,5 +102,5 @@ Nota: o nosso banco de potência testa motos até 70 CV.</div>
 </section>
 
 <script src="script.js"></script>
-<script>document.getElementById('quoteForm')?.addEventListener('submit',function(e){e.preventDefault();const v=document.getElementById('qVehicle').value;const s=document.getElementById('qService').value;const m=document.getElementById('qModel').value.trim();const t=document.getElementById('qText').value.trim();const dynoInfo=s==='Banco de potência'?'%0A%0ADeclaração de responsabilidade do banco:%0Ahttps%3A%2F%2Fmxcross.pt%2Fdeclaracao-dyno.html%0A%0APor favor lê a declaração antes da marcação.':'';const msg=`Olá MXCross.pt.%0A%0ATipo de veículo: ${encodeURIComponent(v)}%0AServiço: ${encodeURIComponent(s)}%0AMarca/modelo: ${encodeURIComponent(m||'A indicar')}%0A%0ADescrição:%0A${encodeURIComponent(t||'A indicar')}${dynoInfo}`;window.open('https://wa.me/351927067633?text='+msg,'_blank');});</script></body>
+<script>document.getElementById('quoteForm')?.addEventListener('submit',function(e){e.preventDefault();const v=document.getElementById('qVehicle').value;const s=document.getElementById('qService').value;const m=document.getElementById('qModel').value.trim();const t=document.getElementById('qText').value.trim();const dynoInfo=s==='Banco de potência'?'%0A%0ADeclaração de responsabilidade do banco:%0Ahttps%3A%2F%2Fmxcross.pt%2Fdeclaracao-dyno.html%0A%0APor favor lê a declaração antes da marcação.':'';const msg=`Olá MXCross.pt.%0A%0ATipo de veículo: ${encodeURIComponent(v)}%0AServiço: ${encodeURIComponent(s)}%0AMarca/modelo: ${encodeURIComponent(m||'A indicar')}%0A%0ADescrição:%0A${encodeURIComponent(t||'A indicar')}${dynoInfo}`;window.open('https://wa.me/351927067633?text=Ol%C3%A1%21%20Venho%20atrav%C3%A9s%20do%20site%20MXCross.pt%20e%20gostaria%20de%20pedir%20informa%C3%A7%C3%B5es%20ou%20fazer%20uma%20marca%C3%A7%C3%A3o.%20Obrigado.?text='+msg,'_blank');});</script></body>
 </html>
