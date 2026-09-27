@@ -10,8 +10,9 @@
   const cats=document.querySelectorAll('.mxchat-chip');
 
   const qa={
-    "Fazem banco de potência?":"Sim. A MXCross.pt faz testes em banco de potência exclusivamente para motos até 70 CV, com medição de potência e binário.",
-    "Qual é o limite do banco?":"Neste momento, testamos apenas motos até 70 CV no banco de potência.",
+    "Fazem banco de potência?":"Sim. A MXCross.pt faz testes em banco de potência exclusivamente para motos até 70 CV, com medição de potência e binário. Aviso de responsabilidade: os testes em banco de potência submetem a moto e os seus componentes a esforço mecânico elevado. A MXCross.pt não se responsabiliza por avarias ou danos no motor, transmissão ou restantes componentes que possam ocorrer durante ou após o teste, nomeadamente quando resultem de desgaste, alterações mecânicas ou problemas preexistentes.",
+    "Qual é o limite do banco?":"Neste momento, testamos apenas motos até 70 CV no banco de potência. Aviso de responsabilidade: os testes em banco de potência submetem a moto e os seus componentes a esforço mecânico elevado. A MXCross.pt não se responsabiliza por avarias ou danos no motor, transmissão ou restantes componentes que possam ocorrer durante ou após o teste, nomeadamente quando resultem de desgaste, alterações mecânicas ou problemas preexistentes.",
+    "Há riscos no teste de banco?":"Sim. Aviso de responsabilidade: os testes em banco de potência submetem a moto e os seus componentes a esforço mecânico elevado. A MXCross.pt não se responsabiliza por avarias ou danos no motor, transmissão ou restantes componentes que possam ocorrer durante ou após o teste, nomeadamente quando resultem de desgaste, alterações mecânicas ou problemas preexistentes.",
     "O que é o Dyno Saturday?":"É um sábado dedicado a testes no banco de potência, por marcação, para medir resultados e comparar alterações.",
     "Testam motos 2T?":"Sim, desde que estejam em boas condições mecânicas e não ultrapassem 70 CV.",
     "Testam motos 4T?":"Sim, desde que não ultrapassem 70 CV.",
@@ -47,7 +48,7 @@
   };
 
   const groups={
-    dyno:["Fazem banco de potência?","Qual é o limite do banco?","O que é o Dyno Saturday?","Testam motos 2T?","Testam motos 4T?","Dão gráfico do teste?","Posso comparar antes e depois?","Quanto custa o banco?"],
+    dyno:["Fazem banco de potência?","Qual é o limite do banco?","Há riscos no teste de banco?","O que é o Dyno Saturday?","Testam motos 2T?","Testam motos 4T?","Dão gráfico do teste?","Posso comparar antes e depois?","Quanto custa o banco?"],
     fabricacao:["Fazem peças à medida?","Fazem flanges?","Fazem casquilhos?","Têm torno mecânico?","Têm fresadora?","Têm CNC?","Fazem CAD?"],
     soldadura:["Fazem soldadura TIG?","Fazem soldadura MIG?","Soldam alumínio?","Trabalham inox?","Fazem escapes?"],
     oficina:["Fazem manutenção de motos?","Fazem diagnóstico?","Trabalham com 4x4?","Têm microesferas de vidro?"],
