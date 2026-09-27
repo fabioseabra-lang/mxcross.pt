@@ -28,8 +28,9 @@
     "Têm CNC?":"Sim. Temos fresadora CNC para maquinação de precisão.",
     "Fazem CAD?":"Podemos desenvolver soluções com desenho CAD antes do fabrico, quando necessário.",
 
-    "Fazem soldadura TIG?":"Sim. Fazemos TIG em inox, alumínio e aço, incluindo escapes, tubagens, suportes e reparações.",
-    "Fazem soldadura MIG?":"Sim. Temos capacidade de soldadura MIG para trabalhos adequados ao processo.",
+    "Fazem soldadura TIG?":"Sim. Trabalhamos com soldadura TIG, MIG e MMA, consoante o material e o tipo de trabalho. Fazemos trabalhos em inox, alumínio e aço, incluindo escapes, tubagens, suportes, estruturas e reparações.",
+    "Fazem soldadura MIG?":"Sim. Trabalhamos com soldadura MIG para os trabalhos adequados ao processo.",
+    "Fazem soldadura MMA?":"Sim. Trabalhamos também com soldadura MMA (elétrodo revestido), quando é o processo mais indicado para o trabalho.",
     "Soldam alumínio?":"Sim. Fazemos soldadura TIG e trabalhos técnicos em alumínio.",
     "Trabalham inox?":"Sim. Trabalhamos inox em escapes, tubagens, suportes e componentes personalizados.",
     "Fazem escapes?":"Sim. Fazemos reparação, adaptação e fabrico de escapes à medida para motos, carros, Jeeps e 4x4.",
@@ -51,7 +52,7 @@
   const groups={
     dyno:["Fazem banco de potência?","Qual é o limite do banco?","Há riscos no teste de banco?","O que é o Dyno Saturday?","Testam motos 2T?","Testam motos 4T?","Dão gráfico do teste?","Posso comparar antes e depois?","Quanto custa o banco?"],
     fabricacao:["Fazem peças à medida?","Fazem flanges?","Fazem casquilhos?","Têm torno mecânico?","Têm fresadora?","Têm CNC?","Fazem CAD?"],
-    soldadura:["Fazem soldadura TIG?","Fazem soldadura MIG?","Soldam alumínio?","Trabalham inox?","Fazem escapes?"],
+    soldadura:["Fazem soldadura TIG?","Fazem soldadura MIG?","Fazem soldadura MMA?","Soldam alumínio?","Trabalham inox?","Fazem escapes?"],
     oficina:["Fazem manutenção de motos?","Fazem diagnóstico?","Trabalham com 4x4?","Têm microesferas de vidro?"],
     contacto:["Onde ficam?","Como faço marcação?","Posso aparecer sem marcação?","Qual é o horário?","Como peço orçamento?","Têm Instagram?","Têm Facebook?"]
   };
