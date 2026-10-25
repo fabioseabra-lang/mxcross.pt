@@ -129,3 +129,47 @@
     autoplay();
   });
 })();
+
+
+// Dyno 3D — arrastar com rato/toque para rodar
+(() => {
+  const stage = document.querySelector('.dyno-3d-stage');
+  const card = document.getElementById('dyno3dCard');
+  if (!stage || !card) return;
+
+  let dragging = false;
+  let startX = 0, startY = 0;
+  let rotY = -18, rotX = 3;
+  let baseY = rotY, baseX = rotX;
+
+  const apply = () => {
+    card.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg) scale(.98)`;
+  };
+
+  stage.addEventListener('pointerdown', (e) => {
+    dragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    baseY = rotY;
+    baseX = rotX;
+    card.classList.add('is-dragging');
+    stage.setPointerCapture?.(e.pointerId);
+  });
+
+  stage.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    rotY = baseY + (e.clientX - startX) * 0.42;
+    rotX = Math.max(-12, Math.min(12, baseX - (e.clientY - startY) * 0.12));
+    apply();
+  });
+
+  const stop = (e) => {
+    if (!dragging) return;
+    dragging = false;
+    card.classList.remove('is-dragging');
+    stage.releasePointerCapture?.(e.pointerId);
+  };
+  stage.addEventListener('pointerup', stop);
+  stage.addEventListener('pointercancel', stop);
+  stage.addEventListener('pointerleave', (e) => { if (dragging && e.buttons === 0) stop(e); });
+})();
