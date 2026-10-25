@@ -90,12 +90,19 @@
 <section class="section dark">
   <div class="container feature">
     <div class="imagebox dyno-3d-stage" aria-label="Banco de potência MXCross.pt em apresentação 3D">
-      <div class="dyno-3d-scene">
-        <div class="dyno-3d-card">
-          <img loading="lazy" src="https://static.metricool.com/planner/202610/7120076-file-657802325553045097.png" alt="Banco de potência MXCross.pt — mota 007">
+      <div class="dyno-3d-scene" id="dyno3dScene">
+        <div class="dyno-3d-card" id="dyno3dCard">
+          <div class="dyno-3d-depth depth-back"></div>
+          <div class="dyno-3d-depth depth-mid"></div>
+          <div class="dyno-3d-face dyno-3d-front">
+            <img loading="lazy" src="https://static.metricool.com/planner/202610/7120076-file-657802325553045097.png" alt="Banco de potência MXCross.pt — mota 007">
+          </div>
+          <div class="dyno-3d-face dyno-3d-back">
+            <img loading="lazy" src="https://static.metricool.com/planner/202610/7120076-file-657802325553045097.png" alt="" aria-hidden="true">
+          </div>
         </div>
       </div>
-      <div class="dyno-3d-label">360° • MXCross Dyno</div>
+      <div class="dyno-3d-label">Arrasta para rodar • 360°</div>
     </div>
     <div class="textbox">
       <span class="badge">Destaque MXCross</span>
