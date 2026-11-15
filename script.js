@@ -173,3 +173,14 @@
   stage.addEventListener('pointercancel', stop);
   stage.addEventListener('pointerleave', (e) => { if (dragging && e.buttons === 0) stop(e); });
 })();
+
+
+/* MXBot — pequena interação visual */
+(() => {
+  const toggle = document.getElementById('mxchatToggle');
+  const panel = document.getElementById('mxchatPanel');
+  if (!toggle || !panel) return;
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('mxbot-active', panel.classList.contains('open'));
+  });
+})();
