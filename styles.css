@@ -870,3 +870,126 @@ h1,h2,h3{font-family:"Barlow Condensed",Arial,sans-serif;margin:0}
   .dyno-3d-back{transform:rotateY(180deg) translateZ(18px)}
   .depth-back{transform:translateZ(-16px)}
 }
+
+
+/* ===== MXBot — mascote/assistente flutuante ===== */
+.mxbot-toggle{
+  width:92px!important;
+  height:110px!important;
+  right:18px!important;
+  bottom:14px!important;
+  border-radius:24px!important;
+  background:transparent!important;
+  overflow:visible;
+  box-shadow:none!important;
+  padding:0!important;
+  display:grid;
+  place-items:end center;
+  transition:transform .22s ease, filter .22s ease;
+}
+.mxbot-toggle:hover{
+  transform:translateY(-5px) scale(1.03);
+  filter:drop-shadow(0 16px 24px rgba(37,103,255,.24));
+}
+.mxbot-toggle img{
+  width:92px;
+  height:110px;
+  object-fit:contain;
+  object-position:center bottom;
+  pointer-events:none;
+  filter:drop-shadow(0 12px 18px rgba(0,0,0,.48));
+}
+.mxbot-online{
+  position:absolute;
+  right:8px;
+  top:17px;
+  width:13px;height:13px;
+  border-radius:50%;
+  background:#25D366;
+  border:3px solid #07090e;
+  box-shadow:0 0 0 4px rgba(37,211,102,.13);
+}
+.mxbot-toggle:before{
+  content:"Olá! Precisas de ajuda?";
+  position:absolute;
+  right:76px;
+  bottom:68px;
+  width:max-content;
+  max-width:190px;
+  padding:9px 12px;
+  border-radius:12px 12px 4px 12px;
+  background:#fff;
+  color:#0a0d12;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:0;
+  box-shadow:0 12px 30px rgba(0,0,0,.30);
+  animation:mxbotBubble 7s ease-in-out infinite;
+}
+@keyframes mxbotBubble{
+  0%,14%,82%,100%{opacity:0;transform:translateY(6px)}
+  22%,72%{opacity:1;transform:translateY(0)}
+}
+.mxchat-panel{
+  right:22px!important;
+  bottom:132px!important;
+}
+.mxbot-head-id{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.mxbot-head-id img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+  object-position:center;
+  border-radius:12px;
+  background:rgba(0,0,0,.22);
+  border:1px solid rgba(255,255,255,.08);
+}
+.mxbot-quicklinks{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px;
+  padding:11px 14px 2px;
+  background:#0c1017;
+}
+.mxbot-quicklinks a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:38px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;
+  background:#151b26;
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+}
+.mxbot-quicklinks a:hover{border-color:rgba(255,255,255,.20);background:#1a2230}
+.mxbot-quicklinks .mxbot-wa{background:#25D366;color:#07150c;border-color:transparent}
+.whatsapp-float{right:118px!important}
+
+@media(max-width:700px){
+  .mxbot-toggle{
+    width:78px!important;
+    height:96px!important;
+    right:7px!important;
+    bottom:5px!important;
+  }
+  .mxbot-toggle img{width:78px;height:96px}
+  .mxbot-toggle:before{
+    right:66px;
+    bottom:62px;
+    font-size:10px;
+    max-width:155px;
+  }
+  .mxchat-panel{
+    right:8px!important;
+    bottom:105px!important;
+    width:calc(100vw - 16px)!important;
+    height:min(650px,calc(100vh - 120px))!important;
+  }
+  .whatsapp-float{right:88px!important;bottom:12px!important}
+}
