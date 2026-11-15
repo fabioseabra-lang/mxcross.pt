@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "AutomotiveBusiness", "name": "MXCross.pt", "url": "https://mxcross.pt", "areaServed": "Rio Maior, Portugal", "telephone": "+351927067633", "sameAs": ["https://www.facebook.com/www.Mxcross.pt/", "https://www.instagram.com/mxcross.pt/"]}</script>
 </head>
-<body>
+<body data-mxbot-page="historia">
 <header class="topbar">
   <div class="container inner">
     <a class="brand" href="index.html">
@@ -177,21 +177,30 @@
   <span class="wa-text">WhatsApp</span>
 </a>
 
-<button class="mxchat-toggle" id="mxchatToggle" aria-label="Abrir chat">CHAT</button>
+
+<button class="mxchat-toggle mxbot-toggle" id="mxchatToggle" aria-label="Abrir MXBot — assistente MXCross">
+  <img src="https://static.metricool.com/planner/202611/7120076-file-9767068481354720573.png" alt="" aria-hidden="true">
+  <span class="mxbot-online" aria-hidden="true"></span>
+</button>
 <section class="mxchat-panel" id="mxchatPanel">
   <div class="mxchat-head">
-    <div>
-      <strong>MXCross Assistente</strong>
-      <small>Ajuda rápida sobre serviços e marcações</small>
+    <div class="mxbot-head-id">
+      <img src="https://static.metricool.com/planner/202611/7120076-file-9767068481354720573.png" alt="MXBot">
+      <div>
+        <strong>MXBot • MXCross.pt</strong>
+        <small>Assistente da oficina • online</small>
+      </div>
     </div>
     <button class="mxchat-close" id="mxchatClose">×</button>
   </div>
   <div class="mxchat-body" id="mxchatBody">
-    <div class="mxmsg bot">Olá! 👋
-
-Posso ajudar com banco de potência, Dyno Saturday, soldadura, maquinação, fabrico à medida, 4x4, localização e marcações.
-
-Nota: o nosso banco de potência testa motos até 70 CV.</div>
+    <div class="mxmsg bot" id="mxbotWelcome">Olá! 👋 Sou o MXBot, a mascote da MXCross.pt.</div>
+  </div>
+  <div class="mxbot-quicklinks">
+    <a href="servicos.html">🔧 Serviços</a>
+    <a href="orcamento.html">📝 Orçamento</a>
+    <a href="faq.html">❓ FAQ</a>
+    <a class="mxbot-wa" href="https://wa.me/351927067633?text=Ol%C3%A1%21%20Venho%20atrav%C3%A9s%20do%20MXBot%20no%20site%20MXCross.pt%20e%20gostaria%20de%20pedir%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">📲 WhatsApp</a>
   </div>
   <div class="mxchat-cats">
     <button class="mxchat-chip" data-cat="dyno">🏍️ Banco / Dyno</button>
