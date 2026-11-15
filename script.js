@@ -184,3 +184,70 @@
     toggle.classList.toggle('mxbot-active', panel.classList.contains('open'));
   });
 })();
+
+
+/* MXBot contextual por página */
+(() => {
+  const welcome = document.getElementById('mxbotWelcome');
+  const bubble = document.getElementById('mxchatToggle');
+  if (!welcome || !bubble) return;
+
+  const page = document.body.dataset.mxbotPage || (location.pathname.split('/').pop() || 'index').replace('.html','');
+  const config = {
+    index: {
+      text: 'Olá! 👋 Sou o MXBot, a mascote da MXCross.pt.\n\nPosso ajudar-te a encontrar o serviço certo, pedir orçamento ou falar connosco pelo WhatsApp.\n\nNota: o nosso banco de potência testa motos até 70 CV.',
+      cat: 'dyno',
+      bubble: 'Olá! Precisas de ajuda?'
+    },
+    historia: {
+      text: 'Bem-vindo à história da MXCross.pt. 👋\n\nAqui podes conhecer como a marca começou em 2014 e como evoluiu até à oficina atual. Se tiveres dúvidas, pergunta-me.',
+      cat: 'oficina',
+      bubble: 'Queres conhecer a nossa história?'
+    },
+    servicos: {
+      text: 'Estás na área de Serviços. 🔧\n\nPosso ajudar-te com manutenção, performance, suspensões, escapes, diagnóstico, 4x4 ou encaminhar-te para um orçamento.',
+      cat: 'oficina',
+      bubble: 'Que serviço procuras?'
+    },
+    testes: {
+      text: 'Estás na área de Testes / Dyno. 🏍️\n\nO nosso banco de potência é para motos até 70 CV. Posso explicar como funciona, riscos, gráficos, Dyno Saturday e marcações.',
+      cat: 'dyno',
+      bubble: 'Queres testar a tua mota?'
+    },
+    fabricacao: {
+      text: 'Estás no Fabrico Técnico. 🛠️\n\nPosso ajudar com soldadura TIG/MIG/MMA, torno, fresadora, CNC, escapes e peças feitas à medida.',
+      cat: 'fabricacao',
+      bubble: 'Precisas de uma peça à medida?'
+    },
+    equipamento: {
+      text: 'Aqui podes ver parte do equipamento da MXCross.pt. ⚙️\n\nSe queres saber que máquina usamos para determinado trabalho, pergunta-me.',
+      cat: 'fabricacao',
+      bubble: 'Queres saber o que conseguimos fabricar?'
+    },
+    faq: {
+      text: 'Estás nas Perguntas Frequentes. ❓\n\nPodes usar os botões abaixo ou escrever diretamente a tua dúvida. Se eu não souber, encaminho-te para contacto humano.',
+      cat: 'contacto',
+      bubble: 'Tens uma dúvida?'
+    },
+    orcamento: {
+      text: 'Vamos preparar o teu pedido de orçamento. 📝\n\nIndica marca/modelo, serviço pretendido, fotos e uma pequena descrição. Quanto melhor a informação, melhor conseguimos avaliar.',
+      cat: 'contacto',
+      bubble: 'Queres pedir orçamento?'
+    }
+  };
+
+  const c = config[page] || config.index;
+  welcome.textContent = c.text;
+  bubble.dataset.bubble = c.bubble;
+
+  const styleId='mxbot-dynamic-bubble-style';
+  if(!document.getElementById(styleId)){
+    const st=document.createElement('style');
+    st.id=styleId;
+    st.textContent='.mxbot-toggle:before{content:attr(data-bubble)!important}';
+    document.head.appendChild(st);
+  }
+
+  const target = document.querySelector('.mxchat-chip[data-cat="'+c.cat+'"]');
+  if(target) setTimeout(()=>target.click(),60);
+})();
