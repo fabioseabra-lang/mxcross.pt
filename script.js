@@ -251,3 +251,152 @@
   const target = document.querySelector('.mxchat-chip[data-cat="'+c.cat+'"]');
   if(target) setTimeout(()=>target.click(),60);
 })();
+
+
+/* MXBot — assistente comercial guiado */
+(() => {
+  const panel = document.getElementById('mxchatPanel');
+  const body = document.getElementById('mxchatBody');
+  const quick = document.querySelector('.mxbot-quicklinks');
+  if (!panel || !body || !quick || document.getElementById('mxbotWorkBtn')) return;
+
+  const state = { vehicle:'', service:'', description:'' };
+
+  const addMsg = (text, who='bot') => {
+    const el = document.createElement('div');
+    el.className = 'mxmsg ' + who;
+    el.textContent = text;
+    body.appendChild(el);
+    body.scrollTop = body.scrollHeight;
+    return el;
+  };
+
+  const clearFlow = () => {
+    body.querySelectorAll('.mxbot-flow').forEach(el => el.remove());
+  };
+
+  const choices = (items, onPick) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'mxbot-flow mxbot-flow-choices';
+    items.forEach(item => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'mxbot-choice';
+      b.textContent = item;
+      b.addEventListener('click', () => {
+        addMsg(item, 'user');
+        wrap.remove();
+        onPick(item);
+      });
+      wrap.appendChild(b);
+    });
+    body.appendChild(wrap);
+    body.scrollTop = body.scrollHeight;
+  };
+
+  const finish = () => {
+    clearFlow();
+    addMsg('Perfeito. Vou organizar o teu pedido para enviares diretamente à MXCross.pt pelo WhatsApp.');
+
+    const legalSensitive = /Preparação|Performance|Escape|4x4|Projeto especial|Reprogramação/i.test(state.service);
+    if (legalSensitive) {
+      addMsg('Nota: alterações de performance, escapes, reprogramações e transformações são analisadas caso a caso e têm de respeitar os requisitos legais, de homologação, segurança e emissões aplicáveis.');
+    }
+    if (/Dyno/i.test(state.service)) {
+      addMsg('Nota Dyno: o banco de potência atual testa motos até 70 CV.');
+    }
+
+    const summary = [
+      'Olá MXCross.pt.',
+      '',
+      'Pedido preparado pelo MXBot:',
+      'Veículo: ' + state.vehicle,
+      'Serviço: ' + state.service,
+      '',
+      'Descrição:',
+      state.description || 'A indicar',
+      '',
+      'Pretendo saber disponibilidade, condições e orçamento.'
+    ].join('\n');
+
+    const actions = document.createElement('div');
+    actions.className = 'mxbot-flow mxbot-flow-actions';
+
+    const wa = document.createElement('a');
+    wa.className = 'mxbot-send-wa';
+    wa.href = 'https://wa.me/351927067633?text=' + encodeURIComponent(summary);
+    wa.target = '_blank';
+    wa.rel = 'noopener';
+    wa.textContent = '📲 Enviar pedido por WhatsApp';
+
+    const again = document.createElement('button');
+    again.type = 'button';
+    again.className = 'mxbot-reset';
+    again.textContent = '↻ Fazer outro pedido';
+    again.addEventListener('click', start);
+
+    actions.append(wa, again);
+    body.appendChild(actions);
+    body.scrollTop = body.scrollHeight;
+  };
+
+  const askDescription = () => {
+    addMsg('Explica em poucas palavras o que pretendes fazer ou qual é o problema.');
+    const box = document.createElement('div');
+    box.className = 'mxbot-flow mxbot-flow-text';
+    const ta = document.createElement('textarea');
+    ta.rows = 4;
+    ta.placeholder = 'Ex.: preciso de fabricar uma linha de escape à medida...';
+    const send = document.createElement('button');
+    send.type = 'button';
+    send.textContent = 'Continuar';
+    send.addEventListener('click', () => {
+      state.description = ta.value.trim();
+      addMsg(state.description || 'Prefiro explicar pelo WhatsApp.', 'user');
+      box.remove();
+      finish();
+    });
+    box.append(ta, send);
+    body.appendChild(box);
+    ta.focus();
+    body.scrollTop = body.scrollHeight;
+  };
+
+  const askService = () => {
+    addMsg('Que serviço procuras?');
+    choices([
+      '🏍️ Banco / Dyno',
+      '🔥 Soldadura',
+      '🧰 Escape à medida',
+      '⚙️ Peça / fabrico técnico',
+      '🛠️ Suspensão de moto',
+      '🔧 Manutenção / diagnóstico',
+      '⚡ Preparação / performance',
+      '🚙 Projeto 4x4 / especial',
+      '❓ Outro'
+    ], value => {
+      state.service = value.replace(/^[^A-Za-zÀ-ÿ0-9]+/,'');
+      askDescription();
+    });
+  };
+
+  function start() {
+    clearFlow();
+    state.vehicle = '';
+    state.service = '';
+    state.description = '';
+    addMsg('Vamos tratar disso. Primeiro: que veículo tens?');
+    choices(['🏍️ Mota','🚗 Carro','🚙 Jeep / 4x4','🧩 Componente / peça','❓ Outro'], value => {
+      state.vehicle = value.replace(/^[^A-Za-zÀ-ÿ0-9]+/,'');
+      askService();
+    });
+  }
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.id = 'mxbotWorkBtn';
+  btn.className = 'mxbot-work-btn';
+  btn.textContent = '🤖 MXBot — preparar pedido';
+  btn.addEventListener('click', start);
+  quick.prepend(btn);
+})();
