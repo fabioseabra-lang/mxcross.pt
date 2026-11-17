@@ -993,3 +993,70 @@ h1,h2,h3{font-family:"Barlow Condensed",Arial,sans-serif;margin:0}
   }
   .whatsapp-float{right:88px!important;bottom:12px!important}
 }
+
+
+/* MXBot — fluxo comercial guiado */
+.mxbot-work-btn{
+  grid-column:1/-1;
+  min-height:42px;
+  border:0;
+  border-radius:10px;
+  background:linear-gradient(135deg,#1a66ff,#0f4fd8);
+  color:#fff;
+  font-weight:900;
+  font-size:12px;
+  cursor:pointer;
+  box-shadow:0 10px 24px rgba(26,102,255,.20);
+}
+.mxbot-work-btn:hover{filter:brightness(1.08)}
+.mxbot-flow{margin:8px 0 2px}
+.mxbot-flow-choices{display:flex;flex-wrap:wrap;gap:7px}
+.mxbot-choice,.mxbot-reset{
+  border:1px solid rgba(255,255,255,.10);
+  background:#151b26;
+  color:#fff;
+  border-radius:10px;
+  padding:9px 11px;
+  font-size:11px;
+  font-weight:800;
+  cursor:pointer;
+}
+.mxbot-choice:hover,.mxbot-reset:hover{background:#1c2534;border-color:rgba(255,255,255,.22)}
+.mxbot-flow-text{display:grid;gap:8px}
+.mxbot-flow-text textarea{
+  width:100%;
+  box-sizing:border-box;
+  resize:vertical;
+  min-height:88px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:10px;
+  background:#0b0f15;
+  color:#fff;
+  padding:10px;
+  font:inherit;
+}
+.mxbot-flow-text button{
+  border:0;
+  border-radius:10px;
+  padding:10px 12px;
+  background:#fff;
+  color:#0b0f15;
+  font-weight:900;
+  cursor:pointer;
+}
+.mxbot-flow-actions{display:grid;gap:8px}
+.mxbot-send-wa{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  border-radius:10px;
+  background:#25D366;
+  color:#07150c;
+  font-size:12px;
+  font-weight:900;
+  text-align:center;
+}
+@media(max-width:700px){
+  .mxbot-choice{flex:1 1 calc(50% - 7px)}
+}
